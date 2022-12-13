@@ -13,11 +13,20 @@ let dataGlasses = [
 let hienThi = () => {
     let newDataGlasses = dataGlasses.map(function (dataGlasses) {
         // console.log(dataGlasses.src);
-        return `<div class="col-4"><img src="${dataGlasses.src}" alt="" style="width: 100%;"></div>`;
+        return `<div onclick="thuKinh('${dataGlasses.virtualImg}')" class="col-4"><img src="${dataGlasses.src}" alt="" style="width: 100%;"></div>`;
     });
     // console.log(newDataGlasses);
     let content = newDataGlasses.join("");
     document.querySelector('#vglassesList').innerHTML = content;
 }
 hienThi();
+
+let thuKinh = new2 => {
+    let testimg = `<div class="avatarCss"><img src="${new2}" alt=""></div>`;
+    let content = `<div class="avatarCss"><img src="${new2}" alt=""></div>`;
+    // console.log(testimg);
+    document.querySelector('#avatar').innerHTML = testimg;
+    console.log(content);
+    document.querySelector('#glassesInfo').innerHTML = content;
+}
 
