@@ -11,22 +11,32 @@ let dataGlasses = [
 ];
 
 let hienThi = () => {
-    let newDataGlasses = dataGlasses.map(function (dataGlasses) {
-        // console.log(dataGlasses.src);
-        return `<div onclick="thuKinh('${dataGlasses.virtualImg}')" class="col-4"><img src="${dataGlasses.src}" alt="" style="width: 100%;"></div>`;
-    });
-    // console.log(newDataGlasses);
-    let content = newDataGlasses.join("");
+    let content = "";
+    for (const value in dataGlasses) {
+        content += `<div onclick="thuKinh('${value}')" class="col-4"><img src="${dataGlasses[value].src}" alt="" style="width: 100%;"></div>`;
+    }
+    // console.log(content);
     document.querySelector('#vglassesList').innerHTML = content;
 }
 hienThi();
 
-let thuKinh = new2 => {
-    let testimg = `<div class="avatarCss"><img src="${new2}" alt=""></div>`;
-    let content = `<div class="avatarCss"><img src="${new2}" alt=""></div>`;
-    // console.log(testimg);
-    document.querySelector('#avatar').innerHTML = testimg;
-    console.log(content);
-    document.querySelector('#glassesInfo').innerHTML = content;
+let thuKinh = (id) => {
+    let { name, virtualImg, brand, color, price, description } = dataGlasses[id];
+    document.querySelector('.vglasses__info').style.display = "block";
+    content = `<img src="${virtualImg}" alt="" />`
+    title = `<div class="title">
+   <h6>${name} - ${brand} (${color})</h6>
+   </div>
+   <div class="body-Glass">
+   <div class="price">
+   <span class="giaBan">$ ${price}</span> <span class="spanTB">Stocking</span>
+   </div>
+   </div>
+   <div class="footer-Glass">
+   <p class="mb-0 mt-3">${description}</p>
+   </div>`;
+
+    document.querySelector('#avatar').innerHTML = content;
+    document.querySelector('#glassesInfo').innerHTML = title;
 }
 
