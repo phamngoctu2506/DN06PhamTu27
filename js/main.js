@@ -40,3 +40,9 @@ let thuKinh = (id) => {
     document.querySelector('#glassesInfo').innerHTML = title;
 }
 
+let removeGlasses1 = () => {
+    document.querySelector('#avatar img').style.display = "none";
+}
+let removeGlasses2 = () => {
+    document.querySelector('#avatar img').style.display = "block";
+}

@@ -8,6 +8,8 @@ body{
 }
 
 /* MAIN CSS */
+
+
 .vglasses__left{
     background-color: white;
     padding: 20px 40px;
@@ -24,6 +26,9 @@ body{
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
+.avatar{
+    display: none;
+}
 .vglasses__model{
     background-image: url('../img/model.jpg');
     background-position: center top;
